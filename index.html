@@ -21,7 +21,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -46,21 +46,27 @@
 
         /* Seções */
         section {
-            margin: 40px 0;
+            margin: 45px 0;
         }
 
         h2 {
             color: #58a6ff;
             border-bottom: 1px solid #30363d;
             padding-bottom: 8px;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
         }
 
-        /* Cards de Projetos/Configurações */
+        h3 {
+            color: #f0f6fc;
+            margin: 20px 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        /* Grid de Cards */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
@@ -77,9 +83,10 @@
             border-color: #58a6ff;
         }
 
-        .card h3 {
+        .card h4 {
             color: #f0f6fc;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         .card p {
@@ -87,7 +94,14 @@
             font-size: 0.95rem;
         }
 
-        /* Seção de Comandos / Bloco de Notas */
+        .card ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        /* Código / Blocos de Comandos */
         .code-block {
             background-color: #161b22;
             border-radius: 6px;
@@ -96,10 +110,16 @@
             font-family: 'Courier New', Courier, monospace;
             color: #7ee787;
             overflow-x: auto;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
         }
 
-        /* Links e Botões */
+        .code-comment {
+            color: #8b949e;
+            font-style: italic;
+        }
+
+        /* Botões */
         .btn {
             display: inline-block;
             background-color: #21262d;
@@ -134,44 +154,95 @@
         <!-- Cabeçalho Principal -->
         <header>
             <h1>Márcio Mavambo</h1>
-            <p>Infraestrutura Home Lab | Linux Server | Automações & Redes</p>
+            <p>Infraestrutura Home Lab | Linux Server | Armazenamento & Redes Mesh</p>
             <a href="https://github.com" target="_blank" class="btn">Meu GitHub</a>
         </header>
 
-        <!-- Seção: Meu Lab / Servidor -->
+        <!-- Seção 1: Especificações do Lab -->
         <section>
-            <h2>Meu Home Server</h2>
+            <h2>Infraestrutura de Hardware</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Sistema Operacional</h3>
-                    <p>Ambiente rodando em <strong>Ubuntu Server</strong> com gerenciamento simplificado via <strong>CasaOS</strong> para containers Docker.</p>
+                    <h4>Servidor Host</h4>
+                    <p>Máquina dedicada atuando como node central do Home Lab.</p>
+                    <ul>
+                        <li><strong>Armazenamento SO:</strong> SSD de 120GB exclusivo</li>
+                        <li><strong>Firmware Base:</strong> Inicialização via Legacy BIOS</li>
+                        <li><strong>Sistema Base:</strong> Ubuntu Server (versão otimizada)</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3>Mídia & Streaming</h3>
-                    <p>Servidor de streaming privado com <strong>Jellyfin</strong>, configurado com bibliotecas organizadas de Filmes, Séries e Animes.</p>
+                    <h4>Pool de Armazenamento (Mídia)</h4>
+                    <p>Estrutura externa para abastecimento de dados e bibliotecas locais.</p>
+                    <ul>
+                        <li>3x Discos Rígidos Externos dedilhados para mídia</li>
+                        <li>Diretórios mapeados diretamente para containers via Docker</li>
+                        <li>Separação estrutural de Filmes, Séries e Animes</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3>Redes & Acesso Seguro</h3>
-                    <p>Conexão externa segura configurada via rede mesh com <strong>Tailscale</strong>, permitindo acesso remoto protegido.</p>
+                    <h4>Ambiente de Containers</h4>
+                    <p>Camada de abstração para implantação ágil de microsserviços.</p>
+                    <ul>
+                        <li>Orquestração nativa via Docker Engine</li>
+                        <li>Interface de gerenciamento baseada em CasaOS</li>
+                        <li>Isolamento de volumes persistentes de dados</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Seção: Documentação Rápida / Snippets -->
+        <!-- Seção 2: Serviços Rodando -->
         <section>
-            <h2>Laboratório e Comandos Úteis</h2>
-            <p style="margin-bottom: 15px;">Notas rápidas de terminal que utilizo no gerenciamento do meu servidor:</p>
+            <h2>Serviços e Entrega de Conteúdo</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>Jellyfin Media Server</h4>
+                    <p>Central de streaming privado de alto desempenho, rodando liso na rede doméstica.</p>
+                    <ul>
+                        <li>Metadados e indexação automática ativos</li>
+                        <li>Customizações aplicadas via CSS no painel</li>
+                        <li>Streaming fluido sem engasgos locais</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Tailscale Mesh Network</h4>
+                    <p>Rede privada virtual utilizada para interconexão segura de dispositivos externos.</p>
+                    <ul>
+                        <li>Encaminhamento através de túnel criptografado</li>
+                        <li>Compartilhamento seguro com TVs e smartphones externos</li>
+                        <li>Dispensa a necessidade de abertura de portas no roteador</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Documentação Técnica / Bloco de Notas -->
+        <section>
+            <h2>Automações e Comandos de Operação</h2>
+            <p style="margin-bottom: 20px;">Documentação de rotinas criadas para garantir a estabilidade do ecossistema:</p>
             
-            <h3>Monitoramento do Sistema</h3>
-            <div class="code-block">htop</div>
-            
-            <h3>Verificar consumo de disco nos HDDs</h3>
-            <div class="code-block">df -h</div>
+            <h3>Agendamento de Reinicialização Diária</h3>
+            <p style="margin-bottom: 10px; font-size: 0.95rem; color: #8b949e;">Rotina configurada no cron do Ubuntu Server para reiniciar a máquina automaticamente todas as madrugadas às 01:00, com login automático configurado na inicialização.</p>
+            <div class="code-block">
+                <span class="code-comment"># Edição das rotinas do sistema</span><br>
+                sudo crontab -e<br><br>
+                <span class="code-comment"># Linha inserida para reinicialização diária às 01:00</span><br>
+                0 1 * * * /sbin/shutdown -r now
+            </div>
+
+            <h3>Comandos de Verificação</h3>
+            <div class="code-block">
+                <span class="code-comment"># Monitoramento de processos ativos e carga da CPU</span><br>
+                htop<br><br>
+                <span class="code-comment"># Validar montagem e espaço ocupado nos discos externos</span><br>
+                df -h
+            </div>
         </section>
 
         <!-- Rodapé -->
         <footer>
-            <p>&copy; 2026 Márcio Mavambo. Atualizado via GitHub Pages.</p>
+            <p>&copy; 2026 Márcio Mavambo. Documentação pública via GitHub Pages.</p>
         </footer>
 
     </div>
